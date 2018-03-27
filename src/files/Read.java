@@ -5,18 +5,40 @@ import java.util.*;
 
 public class Read {
 	
+	private static Scanner x;
 	
-	public static void readFile() {
+	public static void openFile() {
 		
-		
+		try {
+			x = new Scanner(new File("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\credentials.txt"));
+		}
+		catch(Exception e) {
+			System.out.println("Couldn't find file");
+		}
 		
 	}
 	
-	public static boolean checkCredentials(String username, String password) {
+	public static boolean checkCredentials(String login_username, String login_password) {
 		
 		//READ FILE, COMPARE WITH username AND password PARAMETERS, RETURN TRUE OR FALSE
 		
-		return true;
+		openFile();
+		
+		boolean end = true;
+		
+		while(x.hasNext() && end) {
+			String username = x.next();
+			String password = x.next();
+		
+			if(login_username.equalsIgnoreCase(username)){
+				if(login_password.equalsIgnoreCase(password)) {
+					return true;
+				}
+			}
+			
+		}
+		
+		return false;
 		
 	}
 	
