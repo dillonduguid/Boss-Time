@@ -7,7 +7,8 @@ public class Main {
 	
 	public static void main(String [] args) {
 		
-		Accounts.create("andrew", "dillon123", "Employee");
-				
+		Accounts.create("peter ", "dillon123 ", "Employee");
+		//Accounts.login("hello", "dillon123");	
+		
 	}
 }
