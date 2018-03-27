@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String [] args) {
 		
 		Accounts.create("peter ", "dillon123 ", "Employee");
-		//Accounts.login("hello", "dillon123");	
+		Accounts.login("peter", "dillon123");	
 		
 	}
 }
