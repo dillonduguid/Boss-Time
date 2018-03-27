@@ -12,13 +12,22 @@ public class Main {
 	
 	public static void main(String [] args) {
 		
+		sc = new Scanner(System.in);
+		
 		System.out.println("Username?");
 		String username = sc.nextLine();
 		
 		System.out.println("Password?");
 		String password = sc.nextLine();
 		
-		Open.openFile("credentials");
+		boolean access = Read.checkCredentials(username, password);
+		
+		if(access) {
+			System.out.println("You're in");
+		}
+		else {
+			System.out.println("Access Denied");
+		}
 		
 	}
 }
