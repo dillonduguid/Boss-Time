@@ -8,7 +8,7 @@ public class Accounts {
 	
 	public static void login(String username, String password) {
 				
-		boolean access = Read.checkCredentials(username, password);
+		boolean access = Read.checkLogin(username, password);
 		
 		if(access) {
 			System.out.println("Logged In");
@@ -27,11 +27,25 @@ public class Accounts {
 		
 		if(success) {
 			System.out.println("Create account");
-			//CALL FUNCTION THAT WRITES USERNAME AND JOB ROLE TO FILE
 			Write.addCredentials(username, password);
+			addRole(username, role);
 		}
 		else {
 			System.out.println("I'm sorry, there's already an account with that username in the system");
+		}
+		
+	}
+	
+	public static void addRole(String username, String role) {
+		
+		boolean success = Read.checkRole(username);
+		
+		if(success) {
+			System.out.println("Add Role");
+			Write.addRole(username, role);
+		}
+		else {
+			System.out.println("Sorry, there's already a person with that role");
 		}
 		
 	}
