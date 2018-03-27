@@ -17,18 +17,23 @@ public class Read {
 				System.out.println("Couldn't find file");
 			}
 		}
+		else if (file.equals("roles")) {
+			try {
+				x = new Scanner(new File("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\roles.txt"));
+			}
+			catch(Exception e) {
+				System.out.println("Couldn't find file");
+			}
+		}
 		
 	}
 	
-	public static boolean checkCredentials(String login_username, String login_password) {
+	public static boolean checkLogin(String login_username, String login_password) {
 		
 		//READ FILE, COMPARE WITH username AND password PARAMETERS, RETURN TRUE OR FALSE
-		openFile("credentials");
+		openFile("credentials");	
 		
-		boolean end = true;
-		
-		
-		while(x.hasNext() && end) {
+		while(x.hasNext()) {
 			String username = "";
 			String password = "";
 			
@@ -53,27 +58,47 @@ public class Read {
 	public static boolean checkCreateAccount(String create_username) {
 		
 		openFile("credentials");
-		
-		boolean end = true;
-		
-		if(x.hasNext()) {
-			while(x.hasNext() && end) {
-				String username = "";
 				
-				if(x.hasNext()) {
-					username = x.next();
-				}
+
+		while(x.hasNext()) {
+			String username = "";
 				
-				if(create_username.equalsIgnoreCase(username)) {
-					closeFile();
-					return false;
-				}
-				
+			if(x.hasNext()) {
+				username = x.next();
 			}
+				
+			if(create_username.equalsIgnoreCase(username)) {
+				closeFile();
+				return false;
+			}
+				
 		}
+	
 		closeFile();
 		return true;
 		
+	}
+	
+	public static boolean checkRole(String role_username) {
+		
+		openFile("roles");
+				
+		while(x.hasNext()) {
+			String username = "";
+			
+			if(x.hasNext()) {
+				username = x.next();
+			}
+			
+			if(role_username.equalsIgnoreCase(username)) {
+				closeFile();
+				return false;
+			}
+		}
+	
+		
+		closeFile();
+		return true;
 	}
 	
 	public static void closeFile() {
