@@ -7,8 +7,7 @@ public class Main {
 	
 	public static void main(String [] args) {
 		
-		Accounts.create("peter ", "dillon123 ", "Employee");
-		Accounts.login("peter", "dillon123");	
+		System.out.println(Clock.getPayment("hello", "2300" , "26/03/18", "1700", "27/03/18"));
 		
 	}
 }
