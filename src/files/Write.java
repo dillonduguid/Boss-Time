@@ -30,6 +30,25 @@ public class Write {
 				System.out.println("File doesn't exist");
 			}
 		}
+		else if(file.equals("logins")) {
+			try {
+				writer = new FileWriter("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\logins.txt");
+				bw = new BufferedWriter(writer);
+			}
+			catch(Exception e) {
+				System.out.println("File doesn't exist");
+			}
+		}
+		else if (file.equals("payment")) {
+			try {
+				writer = new FileWriter("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\payment.txt");
+				bw = new BufferedWriter(writer);
+			}
+			catch(Exception e) {
+				System.out.println("File doesn't exist");
+			}
+		}
+		
 		
 	}
 	
@@ -60,6 +79,42 @@ public class Write {
 		}
 		catch(Exception e) {
 			System.out.println("Could not add a user to the system");
+		}
+		
+	}
+	
+	public static void addLogin(String username, String password, String time, String date, String state) {
+	
+		openFile("logins");
+		
+		try {
+			bw.write(username);
+			bw.write(password);
+			bw.write(time);
+			bw.write(date);
+			bw.write(state);
+			bw.write(System.lineSeparator());
+			closeFile();
+		}
+		catch(Exception e){
+			System.out.println("Couldn't add the login to the system");
+		}
+		
+	}
+	
+	public static void addPayment(String username, int hours_worked, double payment) {
+		
+		openFile("payment");
+		
+		try {
+			bw.write(username);
+			bw.write(Integer.toString(hours_worked));
+			bw.write(Double.toString(payment));
+			bw.write(System.lineSeparator());
+			closeFile();
+		}
+		catch(Exception e) {
+			System.out.println("Couldn't add payment to the system");
 		}
 		
 	}
