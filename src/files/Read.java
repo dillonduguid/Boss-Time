@@ -11,7 +11,7 @@ public class Read {
 		
 		if(file.equals("credentials")){
 			try {
-				x = new Scanner(new File("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\credentials.txt"));
+				x = new Scanner(new File(""));
 			}
 			catch(Exception e) {
 				System.out.println("Couldn't find file");

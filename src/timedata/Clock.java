@@ -7,7 +7,7 @@ public class Clock {
 
 	private static boolean decision= true;
 	
-	public static void clock(String username, String password) {
+	public static void clock(String username) {
 				
 		String time = "";
 		String date = "";
@@ -15,13 +15,13 @@ public class Clock {
 		if(decision) {
 			time = Calendar.getTime();
 			date = Calendar.getDate();
-			Write.addLogin(username, password, time, date, "IN");
+			Write.addLogin(username, time, date, "IN");
 			decision = false;
 		}
 		else {
 			String out_time = Calendar.getTime();
 			String out_date = Calendar.getDate();
-			Write.addLogin(username, password, out_time, date, "OUT");
+			Write.addLogin(username, out_time, date, "OUT");
 			getPayment(username, time, date, out_time, out_date);
 			decision = true;
 		}
