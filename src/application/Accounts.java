@@ -12,7 +12,7 @@ public class Accounts {
 		
 		if(access) {
 			System.out.println("Logged In");
-			//CHECK WHICH ACCOUNT THEY HAVE
+			//CHECK WHICH ACCOUNT THEY HAVE (employee or manager)
 			//SEND THEM TO CORRECT SCREEN
 		}
 		else {
@@ -31,7 +31,7 @@ public class Accounts {
 			addRole(username, role);
 		}
 		else {
-			System.out.println("I'm sorry, there's already an account with that username in the system");
+			System.out.println("Sorry, there's already an account with that username in the system");
 		}
 		
 	}
@@ -45,7 +45,7 @@ public class Accounts {
 			Write.addRole(username, role);
 		}
 		else {
-			System.out.println("Sorry, there's already a person with that role");
+			System.out.println("Sorry, there's already a username with that role");
 		}
 		
 	}

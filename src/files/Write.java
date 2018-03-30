@@ -83,13 +83,12 @@ public class Write {
 		
 	}
 	
-	public static void addLogin(String username, String password, String time, String date, String state) {
+	public static void addLogin(String username, String time, String date, String state) {
 	
 		openFile("logins");
 		
 		try {
 			bw.write(username);
-			bw.write(password);
 			bw.write(time);
 			bw.write(date);
 			bw.write(state);
