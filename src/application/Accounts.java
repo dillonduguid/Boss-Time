@@ -28,6 +28,7 @@ public class Accounts {
 		if(success) {
 			System.out.println("Create account");
 			Write.addCredentials(username, password);
+			//get role from user
 			addRole(username, role);
 		}
 		else {

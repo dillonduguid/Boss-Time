@@ -28,7 +28,7 @@ public class Clock {
 		
 	}
 	
-	public static int getPayment(String username, String time, String date, String out_time, String out_date) {
+	public static void getPayment(String username, String time, String date, String out_time, String out_date) {
 		
 		double payment = 0.0;
 		
@@ -44,11 +44,12 @@ public class Clock {
 			hours_worked = Integer.parseInt(out_time) - Integer.parseInt(time);
 		}
 		
-		Calendar.convertTime(hours_worked);
+		hours_worked = Calendar.convertTime(hours_worked);
 		
-		return hours_worked;
+		payment = hours_worked * 7.90;
 		
-		//Write.addPayment(username, hours_worked, payment);
+		System.out.println(hours_worked + " and " + payment);
+		Write.addPayment(username, hours_worked, payment);
 		
 		
 	}
