@@ -29,14 +29,12 @@ public class Calendar {
 		
 	public static int convertTime(int hours_worked) {
 		
-		if(hours_worked < 1300) {
-			System.out.println(String.valueOf(hours_worked));
-			
-			hours_worked = hours_worked - 100;
-			return hours_worked;
+		if(hours_worked < 1300) {	
+			return hours_worked / 100;
 		}
 		else {
-			return (hours_worked - 300) / 100;
+			hours_worked = (hours_worked - 200) / 100;
+			return hours_worked;
 		}
 		
 	}

@@ -12,43 +12,28 @@ public class Write {
 	
 	public static void openFile(String file) {
 		
+		String path = "";
+		
 		if(file.equals("credentials")) {
-			try {
-				writer = new FileWriter("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\credentials.txt", true);
-				bw = new BufferedWriter(writer);
-			}
-			catch(Exception e) {
-				System.out.println("File doesn't exist");
-			}
+			path = "C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\credentials.txt";
 		}
 		else if(file.equals("roles")) {
-			try {
-				writer = new FileWriter("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\roles.txt", true);
-				bw = new BufferedWriter(writer);
-			}
-			catch(Exception e) {
-				System.out.println("File doesn't exist");
-			}
+			path = "C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\roles.txt";
 		}
 		else if(file.equals("logins")) {
-			try {
-				writer = new FileWriter("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\logins.txt");
-				bw = new BufferedWriter(writer);
-			}
-			catch(Exception e) {
-				System.out.println("File doesn't exist");
-			}
+			path = "C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\logins.txt";
 		}
 		else if (file.equals("payment")) {
-			try {
-				writer = new FileWriter("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\payment.txt");
-				bw = new BufferedWriter(writer);
-			}
-			catch(Exception e) {
-				System.out.println("File doesn't exist");
-			}
+			path = "C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\payment.txt";
 		}
 		
+		try {
+			writer = new FileWriter(path, true);
+			bw = new BufferedWriter(writer);
+		}
+		catch(Exception e) {
+			System.out.println("File doesn't exist");
+		}
 		
 	}
 	
@@ -108,7 +93,7 @@ public class Write {
 		try {
 			bw.write(username);
 			bw.write(Integer.toString(hours_worked));
-			bw.write(Double.toString(payment));
+			bw.write(" " + Double.toString(payment));
 			bw.write(System.lineSeparator());
 			closeFile();
 		}
