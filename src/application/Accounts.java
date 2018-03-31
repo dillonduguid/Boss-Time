@@ -14,6 +14,7 @@ public class Accounts {
 		//Output log in screen
 		if(access) {
 			System.out.println("Logged In");
+			System.out.println(Read.getRole(username));
 		}
 		else {
 			System.out.println("Access Denied");
@@ -29,12 +30,12 @@ public class Accounts {
 		
 		//Tell them if the account was created and write account record to file
 		if(success && success2) {
-			System.out.println("Account created");
 			Write.addCredentials(username, password);
 			Write.addRole(username, role);
-		}
+			System.out.println("Account created");
+		}		
 		else {
 			System.out.println("Account can't be created");
 		}
-			
+	}
 }
