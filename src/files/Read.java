@@ -81,22 +81,27 @@ public class Read {
 	
 	public static boolean checkRole(String role_username) {
 		
+		String username = "";
+		String role = "";
+		
 		openFile("roles");
 				
 		while(x.hasNext()) {
-			String username = "";
+			username = "";
+			role = "";
 			
 			if(x.hasNext()) {
 				username = x.next();
+				role = x.next();
 			}
 			
 			if(role_username.equalsIgnoreCase(username)) {
 				closeFile();
 				return false;
 			}
+			
 		}
 	
-		
 		closeFile();
 		return true;
 	}

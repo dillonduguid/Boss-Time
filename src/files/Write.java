@@ -85,7 +85,7 @@ public class Write {
 		}
 		
 	}
-	
+		
 	public static void addPayment(String username, int hours_worked, double payment) {
 		
 		openFile("payment");
