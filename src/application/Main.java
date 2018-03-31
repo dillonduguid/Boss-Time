@@ -17,6 +17,10 @@ public class Main{
 		
 		loop = true;
 	
+		while(loop) {
+			loop = option2();
+		}
+		
 	}
 	
 	public static boolean option1() {
@@ -81,6 +85,10 @@ public class Main{
 		
 		Accounts.create(username, password, role);
 		
+	}
+	
+	public static boolean option2() {
+		return true;
 	}
 	
 }
