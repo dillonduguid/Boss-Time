@@ -106,6 +106,30 @@ public class Read {
 		return true;
 	}
 	
+	public static String getRole(String role_username) {
+		
+		String username = "";
+		String role = "";
+		
+		openFile("roles");
+		
+		while(x.hasNext()) {
+			username = "";
+			role = "";
+			
+			if(x.hasNext()) {
+				username = x.next();
+			}
+			
+			if(role_username.equalsIgnoreCase(username)) {
+				role = x.next();
+			}
+		}
+		
+		return role;
+		
+	}
+	
 	public static void closeFile() {
 		x.close();
 	}

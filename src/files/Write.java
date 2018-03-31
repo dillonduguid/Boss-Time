@@ -99,8 +99,7 @@ public class Write {
 		}
 		catch(Exception e) {
 			System.out.println("Couldn't add payment to the system");
-		}
-		
+		}		
 	}
 	
 	public static void closeFile() {
