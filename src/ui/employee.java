@@ -4,8 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
+
+import files.Read;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -47,6 +52,19 @@ public class employee extends JFrame {
 		});
 		logOut.setBounds(635, 342, 89, 23);
 		contentPane.add(logOut);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(38, 51, 587, 314);
+		contentPane.add(textArea);
+		textArea.setVisible(true);
+		
+		JLabel username_label = new JLabel("Username: " + login.username);
+		username_label.setBounds(38, 24, 116, 14);
+		contentPane.add(username_label);
+		
+		JLabel role_label = new JLabel("Role: " + Read.getRole(login.username));
+		role_label.setBounds(176, 24, 104, 14);
+		contentPane.add(role_label);
 		
 		JButton clock_button = new JButton("Clock ");
 		clock_button.setBounds(635, 52, 89, 23);

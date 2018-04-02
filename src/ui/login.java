@@ -86,7 +86,7 @@ public class login extends JFrame {
 				password = password_input.getText();
 				
 				boolean success = Accounts.login(username, password);
-				
+								
 				if(success) {
 					if(Read.getRole(username).equals("Employee")) {
 						employee e = new employee();
