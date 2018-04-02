@@ -123,6 +123,7 @@ public class Read {
 			
 			if(role_username.equalsIgnoreCase(username)) {
 				role = x.next();
+				return role;
 			}
 		}
 		
