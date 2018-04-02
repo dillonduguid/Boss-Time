@@ -6,7 +6,7 @@ import files.Write;
 
 public class Accounts {
 	
-	public static void login(String username, String password) {
+	public static boolean login(String username, String password) {
 				
 		//Check if user can log in 
 		boolean access = Read.checkLogin(username, password);
@@ -14,15 +14,16 @@ public class Accounts {
 		//Output log in screen
 		if(access) {
 			System.out.println("Logged In");
-			System.out.println(Read.getRole(username));
+			return true;
 		}
 		else {
 			System.out.println("Access Denied");
 		}
+		return false;
 		
 	}
 	
-	public static void create(String username, String password, String role) {
+	public static boolean create(String username, String password, String role) {
 		
 		//Check if user can create account 
 		boolean success = Read.checkCreateAccount(username);
@@ -33,9 +34,11 @@ public class Accounts {
 			Write.addCredentials(username, password);
 			Write.addRole(username, role);
 			System.out.println("Account created");
+			return true;
 		}		
 		else {
 			System.out.println("Account can't be created");
 		}
+		return false;
 	}
 }
