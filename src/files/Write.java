@@ -15,16 +15,16 @@ public class Write {
 		String path = "";
 		
 		if(file.equals("credentials")) {
-			path = "C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\credentials.txt";
+			path = "C:\\Users\\Dillon\\Desktop\\Boss-Time-master\\data\\credentials.txt";
 		}
 		else if(file.equals("roles")) {
-			path = "C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\roles.txt";
+			path = "C:\\Users\\Dillon\\Desktop\\Boss-Time-master\\data\\roles.txt";
 		}
 		else if(file.equals("logins")) {
-			path = "C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\logins.txt";
+			path = "C:\\Users\\Dillon\\Desktop\\Boss-Time-master\\data\\logins.txt";
 		}
 		else if (file.equals("payment")) {
-			path = "C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\payment.txt";
+			path = "C:\\Users\\Dillon\\Desktop\\Boss-Time-master\\data\\payment.txt";
 		}
 		
 		try {
