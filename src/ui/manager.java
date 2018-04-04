@@ -11,6 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import files.Read;
+import timedata.Calendar;
+
+import timedata.Calendar;
 
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
@@ -54,10 +57,10 @@ public class manager extends JFrame {
 		logOut.setBounds(635, 342, 89, 23);
 		contentPane.add(logOut);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(38, 51, 587, 314);
-		contentPane.add(textArea);
-		textArea.setVisible(true);
+		JTextArea output = new JTextArea();
+		output.setBounds(38, 51, 587, 314);
+		contentPane.add(output);
+		output.setVisible(true);
 		
 		JLabel username_label = new JLabel("Username: " + login.username);
 		username_label.setBounds(38, 24, 116, 14);
@@ -69,6 +72,12 @@ public class manager extends JFrame {
 		
 		JButton clock_button = new JButton("Clock ");
 		clock_button.setBounds(635, 52, 89, 23);
+		clock_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Calendar.clock();
+			}
+		});
+		
 		contentPane.add(clock_button);
 		
 	}

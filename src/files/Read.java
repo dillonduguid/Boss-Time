@@ -11,7 +11,7 @@ public class Read {
 		
 		if(file.equals("credentials")){
 			try {
-				x = new Scanner(new File("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\credentials.txt"));
+				x = new Scanner(new File("C:\\Users\\Dillon\\Desktop\\Boss-Time-master\\data\\credentials.txt"));
 			}
 			catch(Exception e) {
 				System.out.println("Couldn't find file");
@@ -19,7 +19,7 @@ public class Read {
 		}
 		else if (file.equals("roles")) {
 			try {
-				x = new Scanner(new File("C:\\Users\\Dillon\\Desktop\\Eclipse\\Boss Time\\data\\roles.txt"));
+				x = new Scanner(new File("C:\\Users\\Dillon\\Desktop\\Boss-Time-master\\data\\roles.txt"));
 			}
 			catch(Exception e) {
 				System.out.println("Couldn't find file");
@@ -59,22 +59,26 @@ public class Read {
 		
 		openFile("credentials");
 				
-
-		while(x.hasNext()) {
-			String username = "";
-				
-			if(x.hasNext()) {
-				username = x.next();
+		try {
+			while(x.hasNext()) {
+				String username = "";
+					
+				if(x.hasNext()) {
+					username = x.next();
+				}
+					
+				if(create_username.equalsIgnoreCase(username)) {
+					closeFile();
+					return false;
+				}
+					
 			}
-				
-			if(create_username.equalsIgnoreCase(username)) {
-				closeFile();
-				return false;
-			}
-				
+		
+			closeFile();
 		}
-	
-		closeFile();
+		catch(Exception e) {
+			System.out.println("Error");
+		}
 		return true;
 		
 	}
@@ -85,24 +89,30 @@ public class Read {
 		String role = "";
 		
 		openFile("roles");
+			
+		try {
+			while(x.hasNext()) {
+				username = "";
+				role = "";
 				
-		while(x.hasNext()) {
-			username = "";
-			role = "";
-			
-			if(x.hasNext()) {
-				username = x.next();
-				role = x.next();
+				if(x.hasNext()) {
+					username = x.next();
+					role = x.next();
+				}
+				
+				if(role_username.equalsIgnoreCase(username)) {
+					closeFile();
+					return false;
+				}
+				
 			}
-			
-			if(role_username.equalsIgnoreCase(username)) {
-				closeFile();
-				return false;
-			}
-			
+		
+			closeFile();
 		}
-	
-		closeFile();
+		catch(Exception e) {
+			System.out.println("Error");
+		}
+			
 		return true;
 	}
 	
