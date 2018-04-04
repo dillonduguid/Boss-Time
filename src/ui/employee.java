@@ -10,6 +10,7 @@ import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
 import files.Read;
+import timedata.Clock;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -66,8 +67,15 @@ public class employee extends JFrame {
 		role_label.setBounds(176, 24, 104, 14);
 		contentPane.add(role_label);
 		
-		JButton clock_button = new JButton("Clock ");
+		JButton clock_button = new JButton("Clock " + Clock.decision());
 		clock_button.setBounds(635, 52, 89, 23);
+		clock_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Clock.clock(login.username);
+				clock_button.setText("Clock " + Clock.decision());
+			}
+		});
+		
 		contentPane.add(clock_button);
 	}
 }

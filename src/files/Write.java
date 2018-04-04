@@ -73,9 +73,9 @@ public class Write {
 		openFile("logins");
 		
 		try {
-			bw.write(username);
-			bw.write(time);
-			bw.write(date);
+			bw.write(username + " ");
+			bw.write(time + " ");
+			bw.write(date + " ");
 			bw.write(state);
 			bw.write(System.lineSeparator());
 			closeFile();
@@ -86,13 +86,13 @@ public class Write {
 		
 	}
 		
-	public static void addPayment(String username, int hours_worked, double payment) {
+	public static void addPayment(String username, double hours_worked, double payment) {
 		
 		openFile("payment");
 		
 		try {
-			bw.write(username);
-			bw.write(Integer.toString(hours_worked));
+			bw.write(username + " ");
+			bw.write(Double.toString(hours_worked) + " ");
 			bw.write(" " + Double.toString(payment));
 			bw.write(System.lineSeparator());
 			closeFile();
